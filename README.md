@@ -13,3 +13,6 @@ Visualization: Matplotlib, Seaborn.
 
 # Project Directory 📁
 Each directory below contains its own detailed README.md, source code and documentation.
+| Directory     | Description   |
+| ------------- | ------------- |
+|statistical analysis?  | python, seaborn?               |
