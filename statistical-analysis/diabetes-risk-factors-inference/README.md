@@ -18,7 +18,7 @@ The core processing phase starts with Data cleaning, addressing missing values, 
 #### Exploratory Data Analysis
 Once refined, the analysis moves into Exploratory Data Analysis, utilizing visualizations to start gathering insights from univariate and bivariate analysis.
 
-#### Analytical Modeling
+#### Statistical Modeling
 The modeling stage is split into two distinct parts: Unsupervised Analysis, which seeks to find underlying data pattern hinting at what variables are best predictors of both classes, and Supervised analysis, placing heavy emphasis on model interpretation and performance comparison to determine which variables provide the highest predictive power for an individual having diabetes or not.
 
 #### Conclusions
