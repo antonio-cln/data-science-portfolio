@@ -1,4 +1,5 @@
 #!/bin/bash
+
 SERVERS=$1
 KAFKA_DIR="/opt/kafka"
 KAFKA_CLUSTER_ID=$(${KAFKA_DIR}/bin/kafka-storage.sh random-uuid)
@@ -14,7 +15,9 @@ for ((i=1; i<=SERVERS; i++)); do
 		CONTROLLERS="$CONTROLLERS,$ENTRY"
 	fi
 done
+
 rm -rf /opt/kafka/logs/server-*-logs
+
 for ((i=1; i<=SERVERS; i++)); do
 	B_PORT=$((9090 + (i * 2)))
 	C_PORT=$((B_PORT + 1))
@@ -27,14 +30,18 @@ for ((i=1; i<=SERVERS; i++)); do
 	echo controller.quorum.voters=$CONTROLLERS >> ${KAFKA_DIR}/config/server-${i}.properties
 	echo "Server ${i} file generated."
 done
+
 for ((i=1; i<=SERVERS; i++)); do
 	${KAFKA_DIR}/bin/kafka-storage.sh format -t ${KAFKA_CLUSTER_ID} -c ${KAFKA_DIR}/config/server-${i}.properties 
 done
+
 for ((i=1; i<=SERVERS; i++)); do
 	${KAFKA_DIR}/bin/kafka-server-start.sh -daemon ${KAFKA_DIR}/config/server-${i}.properties
 done
+
 echo "Checking server(s) status"
 sleep 3
+
 for ((i=1; i<=SERVERS; i++)); do
 	PORT=$((9091 + (i * 2)))
 	${KAFKA_DIR}/bin/kafka-metadata-quorum.sh --bootstrap-controller localhost:${PORT} describe --status

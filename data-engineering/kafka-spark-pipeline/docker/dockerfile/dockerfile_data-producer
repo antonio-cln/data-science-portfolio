@@ -1,0 +1,14 @@
+# OS selection
+FROM python:3.12
+
+# Python packages
+RUN pip3 install --no-cache-dir --break-system-packages\
+    pandas \
+    scikit-learn \
+    pyarrow \
+    kafka-python-ng
+
+# Send training data to the topic
+COPY ./scripts/producer_train.py /pipeline/scripts/producer_train.py
+COPY ./scripts/producer_test.py /pipeline/scripts/producer_test.py
+RUN chmod +x /pipeline/scripts/*.py

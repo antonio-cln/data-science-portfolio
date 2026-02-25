@@ -1,0 +1,17 @@
+# OS selection
+FROM apache/spark:3.4.4-python3
+
+# Setting user to root to be able to execute commands in /home/spark
+USER root
+
+# Python packages
+RUN pip3 install --no-cache-dir \
+    pandas \
+    pyspark==3.4.4 \
+    spark-nlp==6.3.0
+
+# Send training data to the topic
+COPY ./scripts/model_train.py /pipeline/scripts/model_train.py
+COPY ./scripts/model_test.py /pipeline/scripts/model_test.py
+COPY ./scripts/log4j.properties /opt/spark/work-dir/log4j.properties
+RUN chmod +x /pipeline/scripts/*.py

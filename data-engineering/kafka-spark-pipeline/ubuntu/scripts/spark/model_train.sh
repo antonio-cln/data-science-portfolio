@@ -1,4 +1,5 @@
 #!/bin/bash
+
 SERVERS=$1
 
 spark-submit \

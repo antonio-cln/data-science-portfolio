@@ -1,4 +1,4 @@
-# Packages import
+# Importing packages
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 from pyspark.ml.feature import StringIndexer
 import sparknlp
@@ -10,7 +10,7 @@ import sys
 import time
 
 # Bootstrap servers variable definition
-BOOTSTRAP_SERVERS = ",".join(f"127.0.0.1:{9092 + 2*i}" for i in range(int(sys.argv[1])))
+BOOTSTRAP_SERVERS = ",".join(f"kafka{i+1}:{9092 + 2*i}" for i in range(int(sys.argv[1])))
 
 # Spark session creation
 spark = SparkSession \
@@ -83,7 +83,7 @@ pipeline = Pipeline()\
 result = pipeline.fit(df)
 
 # Saving the model weights
-result.write().overwrite().save("model_weights")
+result.write().overwrite().save("/pipeline/data/model_weights")
 
 # Applying the pipeline results to the df
 result = result.transform(df)

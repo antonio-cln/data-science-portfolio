@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from kafka import KafkaProducer
 
 # Bootstrap servers variable definition
-BOOTSTRAP_SERVERS = [f"127.0.0.1:{9092 + 2*i}" for i in range(int(sys.argv[1]))]
+BOOTSTRAP_SERVERS = [f"kafka{i+1}:{9092 + 2*i}" for i in range(int(sys.argv[1]))]
 
 # Error management
 def error_callback(exc):
@@ -27,7 +27,7 @@ def write_to_kafka(topic_name, messages, labels):
     print(f"Wrote {count} messages into topic: {topic_name}")
 
 # Data loading
-df = pd.read_csv("dataset.csv")
+df = pd.read_csv(r"/pipeline/data/tweet_dataset.csv")
 
 # Cleaning dataset
 df = df[df['Language'] == 'en'].reset_index(drop=True)
@@ -41,7 +41,7 @@ x_train_df = train_df.drop(['Label'], axis=1)
 y_train_df = train_df['Label']
 
 # Saving testing set locally
-test_df.to_parquet("test_df.parquet")
+test_df.to_parquet(r"/pipeline/data/test_df.parquet")
 
 # Sending messages to Kafka topic
 write_to_kafka("tweet-train", x_train_df, y_train_df)

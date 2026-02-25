@@ -1,4 +1,4 @@
-# Packages import
+# Importing packages
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 import sparknlp
 from sparknlp.base import *
@@ -25,7 +25,7 @@ class GlobalAcc:
 glbAcc = GlobalAcc()
 
 # Loading model weights
-model = PipelineModel.load("model_weights")
+model = PipelineModel.load(r"/pipeline/data/model_weights")
 
 # Auxiliary function to evaluate metrics for each batch
 def evaluate_batch(batch_df, batch_id):
@@ -50,7 +50,7 @@ def evaluate_batch(batch_df, batch_id):
         print(f"Global accuracy: {glbAcc.get_global_acc():.4f}")
 
 # Bootstrap servers variable definition
-BOOTSTRAP_SERVERS = ",".join(f"127.0.0.1:{9092 + 2*i}" for i in range(int(sys.argv[1])))
+BOOTSTRAP_SERVERS = ",".join(f"kafka{i+1}:{9092 + 2*i}" for i in range(int(sys.argv[1])))
 
 # Spark session creation
 spark = SparkSession \
