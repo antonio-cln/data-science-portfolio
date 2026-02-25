@@ -11,10 +11,17 @@
   ```
 ## Compose
 The compose file structure if composed by the following services:
-- kafka1, kafka2 and kafka3: nodes in the Kafka cluster
-- kafka-ui: UI to easily manage the cluster at `http://localhost:8080`
-- kafka-topics-init: creates the topics
-- train-data-producer: produces data forwarded to the _tweet-train_ topic
-- test-data-producer: produces data forwarded to the _train-train_ topic
-- spark-model-builder: builds a Spark NLP model from training data and saves the model weights
-- spark-predictor: uses previously obtained model weights for a model that aims to perform prediction on testing data
+- `kafka1`, `kafka2` and `kafka3`
+  - Nodes in the Kafka cluster
+- `kafka-ui`
+  - UI to easily manage the cluster at `http://localhost:8080`
+- `kafka-topics-init`
+  - Creates the topics
+- `train-data-producer`
+  - Produces data forwarded to the _tweet-train_ topic
+- `test-data-producer`
+  - Produces data forwarded to the _train-train_ topic
+- `spark-model-builder`
+  - Builds a Spark NLP model from training data and saves the model weights
+- `spark-predictor`
+  - Uses previously obtained model weights for a model that aims to perform prediction on testing data
