@@ -6,9 +6,11 @@
 > ```
 > and then copy the files contained in [scripts](./scripts) into it. The Kaggle dataset is then required to be downloaded and placed in `$HOME/pipeline` aswell.
 >
-> Proceed to then make the `.sh` and `.py` file executable
+> Proceed to then make the `.sh` and `.py` files executable
 > ```
-> 
+> chmod +x ./data-preparation/*.py
+> chmod +x ./kafka/*.sh 
+> chmod +x ./spark/*.sh && chmod +x ./spark/*.py
 > ```
 
 ## Environment setup
@@ -51,7 +53,7 @@ pip install -r requirements.txt
 ## Data preparation and training data ingestion
 - Performing data preparation and then ingestion through the 3-nodes Kafka cluster
   ```
-  python ./data-preparation/producer_train.py 3
+  ./data-preparation/producer_train.py 3
   ```
   
 ## Spark model training
@@ -69,7 +71,7 @@ pip install -r requirements.txt
 ## Testing data ingestion
 - Performing data ingestion through the 3-nodes Kafka cluster
   ```
-  python ./data-preparation/producer_test.py 3
+  ./data-preparation/producer_test.py 3
   ```
 
 
