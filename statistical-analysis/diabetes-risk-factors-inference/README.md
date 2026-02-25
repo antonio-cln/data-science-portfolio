@@ -1,5 +1,5 @@
-## Folder Contents 📂
-| File          | Description   |
+## Directory contents 📂
+| Content          | Description   |
 | ------------- | ------------- |
 | [analysis.ipynb](./analysis.ipynb)  | Jupyter Notebook containing Python code and visualizations  |
 | [analysis.html](https://antonio-cln.github.io/data-science-portfolio/statistical-analysis/diabetes-risk-factors-inference/analysis.html)  | HTML rendered version of the analysis  |
