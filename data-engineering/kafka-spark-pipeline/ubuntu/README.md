@@ -25,7 +25,7 @@
     ```
 
 ## Python requirements
-The required Python packages are provided in the [requirements.txt](./requirements.txt) file.
+The required Python packages are provided in the [requirements.txt](./scripts/requirements.txt) file.
 ```
 python3 -m venv pipe-venv
 source pipe-venv/bin/activate
