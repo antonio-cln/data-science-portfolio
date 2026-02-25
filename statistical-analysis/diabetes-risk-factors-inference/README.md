@@ -5,7 +5,7 @@
 | [analysis.html](https://antonio-cln.github.io/data-science-portfolio/statistical-analysis/diabetes-risk-factors-inference/analysis.html)  | HTML rendered version of the analysis  |
 | [technical-presentation.pdf](./technical-presentation.pdf) | Technical presentation of the findings |
 
-## Analysis Overview 📊 
+## Analysis Overview 
 The goal of this analysis is to identify which health metrics (BMI, Glucose levels, Age, etc.) serve as the strongest predictors for diabetes.  
 <br>
 
