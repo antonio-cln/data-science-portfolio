@@ -1,8 +1,6 @@
 #!/bin/bash
 SERVERS=$1
 
-cd /home/a/
-source vvv/bin/activate
 spark-submit \
 --driver-memory 24g \
 --executor-memory 16g \
@@ -12,4 +10,4 @@ spark-submit \
 --conf "spark.executor.extraJavaOptions=-Dlog4j.configuration=file:log4j.properties" \
 --conf "spark.serializer=org.apache.spark.serializer.KryoSerializer" \
 --conf "spark.kryoserializer.buffer.max=2000M" \
-./model_train.py $SERVERS
+./spark/model_train.py $SERVERS

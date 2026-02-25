@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 import time
 
@@ -24,7 +26,7 @@ def write_to_kafka(topic_name, messages, labels):
     producer.flush()
     print(f"Wrote {count} messages into topic: {topic_name}")
 
-df = pd.read_csv("/home/a/Downloads/sentiment-dataset-with-1-million-tweets/dataset.csv")
+df = pd.read_csv("dataset.csv")
 
 df = df[df['Language'] == 'en'].reset_index(drop=True)
 df = df[['Text', 'Label']]
