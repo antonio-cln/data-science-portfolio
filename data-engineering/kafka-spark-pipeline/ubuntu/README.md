@@ -1,3 +1,11 @@
+> [!IMPORTANT]
+> The upcoming code considers `$HOME/pipeline` as working directory therefore it is suggested to first run the following code snippet
+> ```
+> cd $HOME
+> mkdir pipeline && cd pipeline
+> ```
+> and then copy the files contained in [scripts](./scripts) into it.
+
 ## Environment setup
 - Operative System
   - The OS employed for this pipeline implementation is Ubuntu version 24.04
@@ -10,7 +18,7 @@
     ```
 
 ## Python requirements
-The required Python packages are provided in the (requirements.txt)[./requirements.txt] file.
+The required Python packages are provided in the [requirements.txt](./requirements.txt) file.
 ```
 python3 -m venv pipe-venv
 
@@ -18,7 +26,7 @@ python3 -m venv pipe-venv
 
 ## Kafka 
 - Version
-  - The employed Kafka version is 2.13-4.1.1. The starting working directory is `$HOME`.
+  - The employed Kafka version is 2.13-4.1.1. 
     ```
     mkdir app && cd $HOME/app
     curl -O https://archive.apache.org/dist/kafka/4.1.1/kafka_2.13-4.1.1.tgz
