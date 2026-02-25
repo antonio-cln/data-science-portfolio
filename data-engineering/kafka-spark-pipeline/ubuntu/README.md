@@ -4,7 +4,12 @@
 > cd $HOME
 > mkdir pipeline && cd pipeline
 > ```
-> and then copy the files contained in [scripts](./scripts) into it.
+> and then copy the files contained in [scripts](./scripts) into it. The Kaggle dataset is then required to be downloaded and placed in `$HOME/pipeline` aswell.
+>
+> Proceed to then make the `.sh` and `.py` file executable
+> ```
+> 
+> ```
 
 ## Environment setup
 - Operative System
@@ -21,26 +26,56 @@
 The required Python packages are provided in the [requirements.txt](./requirements.txt) file.
 ```
 python3 -m venv pipe-venv
-
+source pipe-venv/bin/activate
+pip install -r requirements.txt
 ```
 
-## Kafka 
-- Version
-  - The employed Kafka version is 2.13-4.1.1. 
-    ```
-    mkdir app && cd $HOME/app
-    curl -O https://archive.apache.org/dist/kafka/4.1.1/kafka_2.13-4.1.1.tgz
-    tar -xvzf kafka_2.13-4.1.1.tgz
-    rm kafka_2.13-4.1.1.tgz
-    sudo mv kafka_2.13-4.1.1 /opt/kafka
-    ```
+## Kafka cluster and topics
+- The employed Kafka version is 2.13-4.1.1. 
+  ```
+  curl -O https://archive.apache.org/dist/kafka/4.1.1/kafka_2.13-4.1.1.tgz
+  tar -xvzf kafka_2.13-4.1.1.tgz
+  rm kafka_2.13-4.1.1.tgz
+  sudo mv kafka_2.13-4.1.1 /opt/kafka
+  ```
 - Configuration
   - Setting up a 3-nodes Kafka cluster
     ```
-    ./cluster_setup.sh 3
+    ./kafka/cluster_setup.sh 3
     ```
   - Creating _tweet-train_ and _tweet-test_ with `partitions==2`and `replication-factor==2`
     ```
-    ./topic_setup.sh 3 2 2
+    ./kafka/topic_setup.sh 3 2 2
     ```
-## Ingesting training data
+    
+## Data preparation and training data ingestion
+- Performing data preparation and then ingestion through the 3-nodes Kafka cluster
+  ```
+  python ./data-preparation/producer_train.py 3
+  ```
+  
+## Spark model training
+- Reading data in batch from the _tweet-train_ topic of the 3-nodes Kafka cluster, training a Spark NLP model and saving weights locally
+  ```
+  ./spark/model_train.sh 3
+  ```
+  
+## Spark prediction
+- Setting up Spark NLP model based on the weights of the previously trained model and preparing it to receive streaming data from the _tweet-test_ topic of the 3-nodes Kafka cluster
+  ```
+  ./spark/model_test.sh 3
+  ```
+
+## Testing data ingestion
+- Performing data ingestion through the 3-nodes Kafka cluster
+  ```
+  python ./data-preparation/producer_test.py 3
+  ```
+
+
+
+
+
+
+
+
