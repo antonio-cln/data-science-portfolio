@@ -1,7 +1,7 @@
 ## Folder Contents 📂
 | File          | Description   |
 | ------------- | ------------- |
-| x  | Ubuntu pipeline implementation  |
+| [ubuntu](./ubuntu)  | Ubuntu pipeline implementation  |
 | x  | Docker pipeline implementation  |
 
 
