@@ -1,5 +1,5 @@
-## Folder Contents 📂
-| File          | Description   |
+## Directory contents 📂
+| Directory          | Description   |
 | ------------- | ------------- |
 | [ubuntu](./ubuntu)  | Ubuntu pipeline implementation  |
 | x  | Docker pipeline implementation  |
