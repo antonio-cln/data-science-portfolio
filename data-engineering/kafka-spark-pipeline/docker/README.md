@@ -12,7 +12,7 @@
 ## Compose
 The compose file structure if composed by the following services:
 - kafka1, kafka2 and kafka3: nodes in the Kafka cluster
-- kafka-ui: UI to easily manage the cluster
+- kafka-ui: UI to easily manage the cluster at `http://localhost:8080`
 - kafka-topics-init: creates the topics
 - train-data-producer: produces data forwarded to the _tweet-train_ topic
 - test-data-producer: produces data forwarded to the _train-train_ topic
