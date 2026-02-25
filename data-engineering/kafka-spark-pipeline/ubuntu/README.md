@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> The upcoming code considers `$HOME/pipeline` as working directory therefore it is suggested to first run the following code snippet
+> `$HOME/pipeline` is considered as working directory therefore to ensure the following commands run correctly first run the following code snippet
 > ```
 > cd $HOME
 > mkdir pipeline && cd pipeline
