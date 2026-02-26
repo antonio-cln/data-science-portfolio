@@ -4,8 +4,8 @@
 > cd $HOME
 > mkdir pipeline && cd pipeline
 > ```
-> and then copy the content of [scripts/](./scripts) into it. 
-> Proceed to then make the `.sh` and `.py` files executable
+> and then copy the content of [scripts/](./scripts) into it.  
+> Proceed to make the `.sh` and `.py` files executable.
 > ```
 > chmod +x ./data-preparation/*.py
 > chmod +x ./kafka/*.sh 
