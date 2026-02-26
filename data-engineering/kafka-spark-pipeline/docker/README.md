@@ -1,6 +1,7 @@
 > [!IMPORTANT]
 > To ensure the following commands run correctly, first copy the [scripts/](./scripts) folder into your working directory. These scripts are required for the next steps.
 ## Custom images
+The required files for the following commands are found in [dockerfile/](./dockerfile).
 - Data producer
   ```
   docker build -f .\dockerfile_data-producer -t data-producer .
@@ -10,7 +11,11 @@
   docker build -f .\dockerfile_spark -t spark-processor .
   ```
 ## Compose
-The compose file structure if composed by the following services:
+The required files for the following commands are found in [compose/](./compose).
+```
+docker compose -f .\docker-compose.yml up -d
+```
+The compose file structure is composed by the following services:
 - `kafka1`, `kafka2` and `kafka3`
   - Nodes in the Kafka cluster
 - `kafka-ui`
