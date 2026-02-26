@@ -1,6 +1,6 @@
 > [!IMPORTANT]
 > To ensure the following commands run correctly, first copy the [scripts/](./scripts) folder into your working directory. These scripts are required for the next steps.  
-> The Kaggle dataset is then required to be downloaded and replace the placeholder in [shared/](.shared) aswell.
+> The Kaggle dataset is then required to be downloaded and replace the placeholder in [shared/](.shared) aswell.  
 ## Custom images
 - Data producer
   ```
