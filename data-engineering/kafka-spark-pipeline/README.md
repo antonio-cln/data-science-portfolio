@@ -7,7 +7,7 @@
 
 
 ## Pipeline Overview  
-<img width="2040" height="1135" alt="Pipeline" src="https://github.com/user-attachments/assets/cd7da42f-916c-49d9-b480-eb61314c4257" />
+<img width="2040" height="835" alt="Pipeline" src="https://github.com/user-attachments/assets/cd7da42f-916c-49d9-b480-eb61314c4257" />
 
 
 #### Data Preparation
