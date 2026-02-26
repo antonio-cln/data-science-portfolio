@@ -1,4 +1,5 @@
 ## Directory contents 📂
+
 | Content | Description   |
 | --- | --- |
 | [analysis.ipynb](./analysis.ipynb)  | Jupyter Notebook containing Python code and visualizations  |
