@@ -1,17 +1,17 @@
 > [!IMPORTANT]
-> `$HOME/pipeline` is considered as working directory therefore to ensure the following commands run correctly first run the following code snippet
+> The path `$HOME/pipeline` is considered as the working directory therefore to ensure the following commands run correctly first run the following code snippet to create it
 > ```
 > cd $HOME
 > mkdir pipeline && cd pipeline
 > ```
-> and then copy the files contained in [scripts/](./scripts) into it. The Kaggle dataset is then required to be downloaded and placed in `$HOME/pipeline` aswell.
->
+> and then copy the content of [scripts/](./scripts) into it. 
 > Proceed to then make the `.sh` and `.py` files executable
 > ```
 > chmod +x ./data-preparation/*.py
 > chmod +x ./kafka/*.sh 
 > chmod +x ./spark/*.sh && chmod +x ./spark/*.py
 > ```
+> The Kaggle dataset is then required to be downloaded and copied in `$HOME/pipeline` aswell.
 
 ## Environment setup
 - Operative System
