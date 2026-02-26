@@ -4,7 +4,7 @@
 > cd $HOME
 > mkdir pipeline && cd pipeline
 > ```
-> and then copy the files contained in [scripts](./scripts) into it. The Kaggle dataset is then required to be downloaded and placed in `$HOME/pipeline` aswell.
+> and then copy the files contained in [scripts/](./scripts) into it. The Kaggle dataset is then required to be downloaded and placed in `$HOME/pipeline` aswell.
 >
 > Proceed to then make the `.sh` and `.py` files executable
 > ```
