@@ -6,7 +6,7 @@
 | [docker](./docker)  | Docker pipeline implementation  |
 
 ## Pipeline Overview  
-<img width="1040" height="635" alt="Pipeline" src="https://github.com/user-attachments/assets/cd7da42f-916c-49d9-b480-eb61314c4257" />
+<img width="1040" height="535" alt="Pipeline" src="https://github.com/user-attachments/assets/cd7da42f-916c-49d9-b480-eb61314c4257" />
 
 
 #### Data Preparation
