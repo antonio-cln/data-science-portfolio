@@ -1,6 +1,7 @@
 ## Directory contents 📂
-| Content          | Description   |
-| :------------- | :------------- |
+
+| Content | Description   |
+| :--- | :--- |
 | [ubuntu](./ubuntu)  | Ubuntu pipeline implementation  |
 | [docker](./docker)  | Docker pipeline implementation  |
 
