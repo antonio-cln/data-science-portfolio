@@ -5,7 +5,7 @@ Hi, I'm Antonio — A Data Science student focused on transforming raw data into
 # Technical Stack 🛠️ 
 Languages: Python, SQL, R.
 
-Packages: Pandas, Numpy, Scipy, Scikit-learn, Statsmodels.
+Packages: Pandas, Numpy, Scipy, Scikit-learn, Statsmodels, PyTorch.
 
 Engineering: Kafka, Spark, Docker.
 
