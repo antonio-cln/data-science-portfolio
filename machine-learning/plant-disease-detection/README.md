@@ -4,7 +4,7 @@
 | :--- | :--- |
 | [analysis.ipynb](./src/analysis.ipynb)  | Jupyter Notebook containing Python code and visualizations  |
 | [analysis.html](https://antonio-cln.github.io/data-science-portfolio/machine-learning/plant-disease-detection/src/analysis.html)  | HTML rendered version of the analysis |
-| [technical-presentation.pdf](./src/technical-presentation.pdf) | Technical presentation of the findings |
+| [technical-presentation.pdf](./technical-presentation.pdf) | Technical presentation of the findings |
 
 ## Analysis Overview 
 The goal of this analysis is to make us of the PlantDoc dataset, implement machine learning models and compare them in order to identify a possible good solution to detect plant disease presence.  
